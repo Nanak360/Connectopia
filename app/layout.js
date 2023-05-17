@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         suppressHydrationWarning={true}
-        className={poppins.className + " bg-socialBg"}
+        className={poppins.className }
       >
         <div className="mt-4 max-w-6xl mx-auto">{children}</div>
       </body>

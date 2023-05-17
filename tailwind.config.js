@@ -16,10 +16,15 @@ module.exports = {
         error: "#CC0000",
         info: "#3498DB",
         warning: "#F9A825",
+        socialBlue100: "#66ced3",
+        socialBlue200: "#33bdc4",
+        socialBlue300: "#008a91",
+        socialBlue400: "#00686d",
+        socialBlue500: "#004548",
       },
       boxShadow: {
-        sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-        md: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+        sm: "0 1px 4px 0 rgba(0,173,181,1)",
+        md: "0px 4px 8px -1px #00686d, 0 2px 4px -1px #004548",
       },
       fontSize: {
         xs: ["0.75rem", { lineHeight: "1rem" }],
