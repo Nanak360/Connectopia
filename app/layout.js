@@ -12,8 +12,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true} className={poppins.className}>
-        {children}
+      <body
+        suppressHydrationWarning={true}
+        className={poppins.className + " bg-socialBg"}
+      >
+        <div className="mt-4 max-w-6xl mx-auto">{children}</div>
       </body>
     </html>
   );
