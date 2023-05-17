@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    color: #EEEEEE;
+    background-color: #222831;
+}
+
+.tertiary300-gradient {
+    background: hsla(215, 11%, 22%, 1);
+    background: linear-gradient(90deg, hsla(215, 11%, 22%, 1) 0%, hsla(215, 11%, 22%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(215, 11%, 22%, 1) 0%, hsla(215, 11%, 22%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(215, 11%, 22%, 1) 0%, hsla(215, 11%, 22%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#33383F", endColorstr="#33383F", GradientType=1);
+}
