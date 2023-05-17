@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card from "../Card";
 import { navList } from "@constants";
 
 const Navigation = () => {
@@ -11,7 +11,7 @@ const Navigation = () => {
         {navList.map((navLink) => (
           <a
             key={navLink.id}
-            className="text-xl flex items-center gap-3 p-4"
+            className="text-xl flex items-center gap-3 p-4 hover:text-socialBlue100 hover:bg-tertiary300 rounded-md"
             href={navLink.link}
           >
             {<navLink.icon />} {navLink.displayName}
