@@ -21,6 +21,11 @@ module.exports = {
         socialBlue300: "#008a91",
         socialBlue400: "#00686d",
         socialBlue500: "#004548",
+        tertiary100: "#888b90",
+        tertiary200: "#61656b",
+        tertiary300: "#33383f",
+        tertiary400: "#2e3238",
+        tertiary500: "#282b31",
       },
       boxShadow: {
         sm: "2px 2px 6px 0 #004548",
