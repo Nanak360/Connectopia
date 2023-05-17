@@ -1,5 +1,5 @@
-import { Bell, Home, LogOut, Save, Users } from "react-feather";
 import Card from "./Card";
+import { navList } from "@constants";
 
 const Navigation = () => {
   return (
@@ -8,28 +8,15 @@ const Navigation = () => {
         <h2 className="text-4xl block text-socialBlue font-bold mb-4">
           Navigation
         </h2>
-        <a className="text-xl flex items-center gap-3 p-4" href="/">
-          <Home /> Home
-        </a>
-        <a className="text-xl flex items-center gap-3 p-4" href="/friends">
-          <Users />
-          Friends
-        </a>
-        <a className="text-xl flex items-center gap-3 p-4" href="/saved">
-          <Save />
-          Saved posts
-        </a>
-        <a
-          className="text-xl flex items-center gap-3 p-4"
-          href="/notifications"
-        >
-          <Bell />
-          Notifications
-        </a>
-        <a className="text-xl flex  items-center gap-3 p-4" href="/logout">
-          <LogOut />
-          Logout
-        </a>
+        {navList.map((navLink) => (
+          <a
+            key={navLink.id}
+            className="text-xl flex items-center gap-3 p-4"
+            href={navLink.link}
+          >
+            {<navLink.icon />} {navLink.displayName}
+          </a>
+        ))}
       </div>
     </Card>
   );
