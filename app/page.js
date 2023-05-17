@@ -1,12 +1,11 @@
 import Card from "@components/Card";
+import Navigation from "@components/Navigation";
 
-export default function Home() {
+export default function Index() {
   return (
     <div className="flex gap-6">
       <div className="w-1/3">
-        <div className="">
-          <Card>test</Card>
-        </div>
+        <Navigation />
       </div>
       <div className="grow">
         <Card>Form</Card>
