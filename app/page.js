@@ -1,5 +1,6 @@
 import Card from "@components/Card";
 import Navigation from "@components/Navigation";
+import PostFormCard from "@components/PostFormCard";
 
 export default function Index() {
   return (
@@ -8,7 +9,7 @@ export default function Index() {
         <Navigation />
       </div>
       <div className="grow">
-        <Card>Form</Card>
+        <PostFormCard />
         <Card>post</Card>
       </div>
     </div>
