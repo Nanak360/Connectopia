@@ -5,7 +5,7 @@ import PostFormCard from "@components/PostFormCard";
 export default function Index() {
   return (
     <div className="flex gap-6">
-      <div className="w-1/3">
+      <div className="w-1/4">
         <Navigation />
       </div>
       <div className="grow">
