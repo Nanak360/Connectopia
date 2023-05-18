@@ -1,3 +1,4 @@
+import Avatar from "@components/Avatar";
 import Card from "@components/Card";
 import Image from "next/image";
 import React from "react";
@@ -6,18 +7,10 @@ import { Map, Send, Share, Smile, User } from "react-feather";
 const PostFormCard = () => {
   return (
     <Card>
-      <div className="flex gap-2">
-        <div className="">
-          <Image
-            className="rounded-full overflow-hidden"
-            src="/profile-pic.png"
-            width="64"
-            height="64"
-            alt="profile-pic"
-          />
-        </div>
+      <div className="flex gap-4">
+        <Avatar src="/profile-pic.png"></Avatar>
         <textarea
-          className="grow p-3 bg-transparent"
+          className="grow mt-1 bg-transparent"
           placeholder={"What's on your mind Nanak?"}
         />
       </div>
