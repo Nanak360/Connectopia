@@ -1,6 +1,7 @@
 import Avatar from "@components/Avatar";
 import Card from "@components/Card";
 import React from "react";
+import { Heart, MessageCircle, Share, Share2 } from "react-feather";
 
 const Post = () => {
   return (
@@ -23,6 +24,17 @@ const Post = () => {
         <div className="rounded-md overflow-hidden">
           <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"></img>
         </div>
+      </div>
+      <div className="mt-5 flex gap-6 items-center">
+        <button className="flex gap-1 items-center">
+          <Heart/> 1.2k
+        </button>
+        <button className="flex gap-1 items-center">
+          <MessageCircle/> 221
+        </button>
+        <button className="flex gap-1 items-center">
+          <Share2/> 91
+        </button>
       </div>
     </Card>
   );
