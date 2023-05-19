@@ -5,8 +5,8 @@ import { Ubuntu } from "next/font/google";
 const ubuntu = Ubuntu({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
-  title: "Nanak's world",
-  description: "My website that has all about me",
+  title: "Connectopia",
+  description: "Stay connected",
 };
 
 export default function RootLayout({ children }) {
