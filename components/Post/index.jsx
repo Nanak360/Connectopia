@@ -1,7 +1,13 @@
 import Avatar from "@components/Avatar";
 import Card from "@components/Card";
 import React from "react";
-import { Heart, MessageCircle, Share, Share2 } from "react-feather";
+import {
+  Camera,
+  Heart,
+  MessageCircle,
+  MoreHorizontal,
+  Share2,
+} from "react-feather";
 
 const Post = () => {
   return (
@@ -10,9 +16,12 @@ const Post = () => {
         <div>
           <Avatar size={36} />
         </div>
-        <div>
+        <div className="grow">
           <a className="font-semibold">Nanak Bandyopadhyay</a>
           <p className="text-gray-500 text-sm">Two hours ago</p>
+        </div>
+        <div>
+          <MoreHorizontal />
         </div>
       </div>
       <div>
@@ -27,14 +36,26 @@ const Post = () => {
       </div>
       <div className="mt-5 flex gap-6 items-center">
         <button className="flex gap-1 items-center">
-          <Heart/> 1.2k
+          <Heart /> 1.2k
         </button>
         <button className="flex gap-1 items-center">
-          <MessageCircle/> 221
+          <MessageCircle /> 221
         </button>
         <button className="flex gap-1 items-center">
-          <Share2/> 91
+          <Share2 /> 91
         </button>
+      </div>
+      <div className="flex mt-4 gap-2 items-center">
+        <Avatar size={32} />
+        <div className="relative border rounded-full grow">
+          <textarea
+            className="bg-transparent rounded-full h-10 p-2 px-4 block w-full"
+            placeholder="Leave a comment"
+          ></textarea>
+          <button className="absolute top-2 right-4 text-tertiary100">
+            <Camera />
+          </button>
+        </div>
       </div>
     </Card>
   );
