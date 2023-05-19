@@ -41,7 +41,7 @@ const Post = () => {
           atque, modi earum quas pariatur error illum beatae sit magnam!
         </p>
         <div className="rounded-md overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"></img>
+          <img src="https://images.unsplash.com/photo-1521080755838-d2311117f767?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1262&q=80"></img>
         </div>
       </div>
       <div className="mt-5 flex gap-6 items-center">
