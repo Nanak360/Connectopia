@@ -14,7 +14,9 @@ const Avatar = ({ src, size = 48 }) => {
           alt="profile-pic"
         />
       ) : (
-        <User size={size} />
+        <div className="bg-primary rounded-full p-0.5">
+          <User size={size} color="#222831" />
+        </div>
       )}
     </div>
   );
