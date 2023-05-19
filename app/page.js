@@ -1,5 +1,6 @@
-import Card from "@components/Card";
+import Avatar from "@components/Avatar";
 import Navigation from "@components/Navigation";
+import Post from "@components/Post";
 import PostFormCard from "@components/PostFormCard";
 
 export default function Index() {
@@ -8,9 +9,9 @@ export default function Index() {
       <div className="w-1/4">
         <Navigation />
       </div>
-      <div className="grow">
+      <div className="w-3/4">
         <PostFormCard />
-        <Card>post</Card>
+        <Post />
       </div>
     </div>
   );
