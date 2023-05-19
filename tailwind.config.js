@@ -27,10 +27,7 @@ module.exports = {
         tertiary400: "#2e3238",
         tertiary500: "#282b31",
       },
-      boxShadow: {
-        sm: "2px 2px 6px 0 #004548",
-        md: "0px 4px 8px -1px #00686d, 0 2px 4px -1px #004548",
-      },
+      
       fontSize: {
         xs: ["0.75rem", { lineHeight: "1.25rem" }],
         sm: ["0.875rem", { lineHeight: "1.5rem" }],
