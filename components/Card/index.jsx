@@ -1,9 +1,16 @@
-export default function Card({ children, noShadow, bgColor, padding, margin }) {
+export default function Card({
+  children,
+  noShadow,
+  bgColor,
+  noPadding = false,
+  margin,
+}) {
+  const tWpadding = noPadding ? "" : "p-4";
   return (
     <div
       className={`${bgColor ? bgColor : "bg-tertiary300"} ${
         !noShadow ? "shadow-md" : ""
-      } rounded-md p-${padding || padding == 0 ? padding : 6} mb-6`}
+      } rounded-md ${tWpadding} mb-6`}
     >
       {children}
     </div>
