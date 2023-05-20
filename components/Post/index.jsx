@@ -1,13 +1,4 @@
-"use client";
-import Avatar from "@components/Avatar";
 import Card from "@components/Card";
-import {
-  Camera,
-  Heart,
-  MessageCircle,
-  MoreHorizontal,
-  Share2,
-} from "react-feather";
 import PostHeader from "./PostHeader";
 import PostContent from "./PostContent";
 import PostReaction from "./PostReaction";
