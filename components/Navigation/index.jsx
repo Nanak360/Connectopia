@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Card from "../Card";
 import { navList } from "@constants";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const Navigation = () => {
   const pathname = usePathname();
@@ -23,7 +24,7 @@ const Navigation = () => {
           Navigation
         </h2>
         {navList.map((navLink) => (
-          <a
+          <Link
             onClick={() => setActivePage(navLink.id)}
             key={navLink.id}
             className={`flex items-center gap-3 px-6 py-3 my-2 rounded-md ${
@@ -32,7 +33,7 @@ const Navigation = () => {
             href={navLink.link}
           >
             {<navLink.icon />} {navLink.displayName}
-          </a>
+          </Link>
         ))}
       </div>
     </Card>
