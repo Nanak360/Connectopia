@@ -10,12 +10,25 @@ import {
   Users,
 } from "react-feather";
 
+const appPages = {
+  HOME: "/",
+  FRIENDS: "/friends",
+  SAVED_POSTS: "/saved",
+  NOTIFICATIONS: "/notifications",
+  LOGOUT: "/logout",
+};
+
 const navList = [
-  { displayName: "Home", link: "/", icon: Home, id: 0 },
-  { displayName: "Friends", link: "/friends", icon: Users, id: 1 },
-  { displayName: "Saved posts", link: "/saved", icon: Save, id: 2 },
-  { displayName: "Notifications", link: "/notifications", icon: Bell, id: 3 },
-  { displayName: "Logout", link: "/logout", icon: LogOut, id: 4 },
+  { displayName: "Home", link: appPages.HOME, icon: Home, id: 0 },
+  { displayName: "Friends", link: appPages.FRIENDS, icon: Users, id: 1 },
+  { displayName: "Saved posts", link: appPages.SAVED_POSTS, icon: Save, id: 2 },
+  {
+    displayName: "Notifications",
+    link: appPages.NOTIFICATIONS,
+    icon: Bell,
+    id: 3,
+  },
+  { displayName: "Logout", link: appPages.LOGOUT, icon: LogOut, id: 4 },
 ];
 
 const postMoreButtonOptions = [
@@ -29,4 +42,5 @@ const postMoreButtonOptions = [
 module.exports = {
   navList,
   postMoreButtonOptions,
+  appPages,
 };
