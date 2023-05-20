@@ -17,7 +17,7 @@ const PostFormCard = () => {
         />
       </div>
       <div className="flex items-center justify-between mt-2">
-        <HorizontalIconsPanel options={createPostOptions} />
+        <HorizontalIconsPanel options={createPostOptions} isButton={true} />
         <button className="flex items-center gap-1 bg-socialBlue300 hover:bg-socialBlue400 rounded-3xl px-6 py-2 text-sm place-self-end">
           <Send size={16} />
           Share

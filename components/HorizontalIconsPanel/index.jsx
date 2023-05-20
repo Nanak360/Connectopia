@@ -17,6 +17,14 @@ const HorizontalIconsPanel = ({
   showIcon = true,
   fullWidth = false,
 }) => {
+  let activeLinkClass = fullWidth
+    ? "flex items-center gap-1 text-socialBlue100 bg-tertiary500 rounded-md px-2 py-2 text-sm justify-center"
+    : "text-socialBlue100 bg-tertiary300 flex items-center gap-1 rounded-3xl px-2 py-1 text-sm";
+
+  let nonActiveLinkClass = fullWidth
+    ? "hover:text-socialBlue100 hover:bg-tertiary300 flex items-center gap-1 rounded-3xl px-2 py-1 text-sm justify-center"
+    : "hover:text-socialBlue100 hover:bg-tertiary300 flex items-center gap-1 rounded-3xl px-2 py-1 text-sm";
+
   return (
     <div
       className={`flex items-center gap-1 ${
@@ -25,14 +33,27 @@ const HorizontalIconsPanel = ({
     >
       {options.map((option) => {
         return (
-          <div key={option.id}>
-            <Link
-              href={option.link}
-              className="hover:text-socialBlue100 hover:bg-tertiary300 flex items-center gap-1 rounded-3xl px-2 py-1 text-sm"
-            >
-              {icons[option.value]}
-              {option.value}
-            </Link>
+          <div className={fullWidth && "w-full"} key={option.id}>
+            {isButton ? (
+              <button
+                className={
+                  option.id == 0 ? activeLinkClass : nonActiveLinkClass
+                }
+              >
+                {icons[option.value]}
+                {option.value}
+              </button>
+            ) : (
+              <Link
+                href={option.link}
+                className={
+                  option.id == 0 ? activeLinkClass : nonActiveLinkClass
+                }
+              >
+                {icons[option.value]}
+                {option.value}
+              </Link>
+            )}
           </div>
         );
       })}
