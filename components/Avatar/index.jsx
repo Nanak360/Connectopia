@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { User } from "react-feather";
 
 const Avatar = ({ src, size = 48 }) => {
   return (
-    <div>
+    <Link href={"/profile"} className="cursor-pointer">
       {src ? (
         <Image
           className="rounded-full overflow-hidden"
@@ -18,7 +19,7 @@ const Avatar = ({ src, size = 48 }) => {
           <User size={size} color="#222831" />
         </div>
       )}
-    </div>
+    </Link>
   );
 };
 
