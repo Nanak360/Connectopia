@@ -24,7 +24,7 @@ const HorizontalIconsPanel = ({
   const [activeSection, setActiveSection] = useState(pathname);
   useEffect(() => {
     if (pathname === "/profile" || pathname.includes("posts")) {
-      setActiveSection("/posts");
+      setActiveSection("/profile/posts");
     } else setActiveSection(pathname);
   }, [pathname]);
   let activeLinkClass = fullWidth
