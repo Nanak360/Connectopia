@@ -1,6 +1,6 @@
 const appPages = {
   HOME: "/",
-  FRIENDS: "/friends",
+  FRIENDS: "/profile/friends",
   SAVED_POSTS: "/saved",
   NOTIFICATIONS: "/notifications",
   LOGOUT: "/logout",
@@ -33,10 +33,10 @@ const createPostOptions = [
 ];
 
 const profileViewOptions = [
-  { id: 0, link: "/", value: "Posts" },
-  { id: 1, link: "/", value: "About" },
-  { id: 2, link: "/", value: "Friends" },
-  { id: 3, link: "/", value: "Photos" },
+  { id: 0, link: "/profile/posts", value: "Posts" },
+  { id: 1, link: "/profile/about", value: "About" },
+  { id: 2, link: "/profile/friends", value: "Friends" },
+  { id: 3, link: "/profile/photos", value: "Photos" },
 ];
 
 module.exports = {
