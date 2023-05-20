@@ -6,7 +6,10 @@ import {
   EyeOff,
   Home,
   LogOut,
+  Map,
   Save,
+  Smile,
+  User,
   Users,
 } from "react-feather";
 
@@ -39,8 +42,15 @@ const postMoreButtonOptions = [
   { id: 4, link: "", value: "Report", icon: AlertTriangle },
 ];
 
+const createPostOptions = [
+  { id: 0, link: "", value: "People", icon: User, iconSize: 16 },
+  { id: 1, link: "", value: "Check in", icon: Map, iconSize: 16 },
+  { id: 2, link: "", value: "Mood", icon: Smile, iconSize: 16 },
+];
+
 module.exports = {
   navList,
   postMoreButtonOptions,
   appPages,
+  createPostOptions,
 };
