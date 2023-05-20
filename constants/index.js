@@ -6,16 +6,32 @@ import {
   EyeOff,
   Home,
   LogOut,
+  Map,
   Save,
+  Smile,
+  User,
   Users,
 } from "react-feather";
 
+const appPages = {
+  HOME: "/",
+  FRIENDS: "/friends",
+  SAVED_POSTS: "/saved",
+  NOTIFICATIONS: "/notifications",
+  LOGOUT: "/logout",
+};
+
 const navList = [
-  { displayName: "Home", link: "/", icon: Home, id: 0 },
-  { displayName: "Friends", link: "/friends", icon: Users, id: 1 },
-  { displayName: "Saved posts", link: "/saved", icon: Save, id: 2 },
-  { displayName: "Notifications", link: "/notifications", icon: Bell, id: 3 },
-  { displayName: "Logout", link: "/logout", icon: LogOut, id: 4 },
+  { displayName: "Home", link: appPages.HOME, icon: Home, id: 0 },
+  { displayName: "Friends", link: appPages.FRIENDS, icon: Users, id: 1 },
+  { displayName: "Saved posts", link: appPages.SAVED_POSTS, icon: Save, id: 2 },
+  {
+    displayName: "Notifications",
+    link: appPages.NOTIFICATIONS,
+    icon: Bell,
+    id: 3,
+  },
+  { displayName: "Logout", link: appPages.LOGOUT, icon: LogOut, id: 4 },
 ];
 
 const postMoreButtonOptions = [
@@ -26,7 +42,15 @@ const postMoreButtonOptions = [
   { id: 4, link: "", value: "Report", icon: AlertTriangle },
 ];
 
+const createPostOptions = [
+  { id: 0, link: "", value: "People", icon: User, iconSize: 16 },
+  { id: 1, link: "", value: "Check in", icon: Map, iconSize: 16 },
+  { id: 2, link: "", value: "Mood", icon: Smile, iconSize: 16 },
+];
+
 module.exports = {
   navList,
   postMoreButtonOptions,
+  appPages,
+  createPostOptions,
 };

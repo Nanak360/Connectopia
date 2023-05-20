@@ -1,13 +1,22 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "../Card";
 import { navList } from "@constants";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const Navigation = () => {
-  const [activePage, setActivePage] = useState(0);
+  const pathname = usePathname();
+  console.log("pathname = ", pathname);
+  const [activePage, setActivePage] = useState(pathname);
+  useEffect(() => {
+    setActivePage(pathname);
+  }, [pathname]);
+  console.log("activePage = ", activePage);
   const hoverClassNames =
     "hover:bg-socialBlue200 hover:bg-opacity-20 hover:-mx-6 px-4 hover:shadow-sm transition-all scale-110";
-  const activeClassNames = "text-tertiary500 bg-socialBlue bg-opacity-80 px-4 -mx-10 shadow-sm";
+  const activeClassNames =
+    "text-tertiary500 bg-socialBlue bg-opacity-80 px-4 -mx-10 shadow-sm";
   return (
     <Card>
       <div className="p-2">
@@ -15,16 +24,16 @@ const Navigation = () => {
           Navigation
         </h2>
         {navList.map((navLink) => (
-          <a
+          <Link
             onClick={() => setActivePage(navLink.id)}
             key={navLink.id}
             className={`flex items-center gap-3 px-6 py-3 my-2 rounded-md ${
-              activePage == navLink.id ? activeClassNames : hoverClassNames
+              activePage == navLink.link ? activeClassNames : hoverClassNames
             }`}
             href={navLink.link}
           >
             {<navLink.icon />} {navLink.displayName}
-          </a>
+          </Link>
         ))}
       </div>
     </Card>

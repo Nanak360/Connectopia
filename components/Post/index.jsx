@@ -11,6 +11,7 @@ import {
   Share2,
 } from "react-feather";
 import { postMoreButtonOptions } from "@constants";
+import Link from "next/link";
 
 const Post = () => {
   const [openMore, setOpenMore] = useState(false);
@@ -21,7 +22,11 @@ const Post = () => {
           <Avatar size={36} />
         </div>
         <div className="grow">
-          <a className="font-semibold">Nanak Bandyopadhyay</a>
+          <Link href={"/profile"}>
+            <span className="font-semibold hover:underline cursor-pointer">
+              Nanak Bandyopadhyay
+            </span>
+          </Link>
           <p className="text-gray-500 text-sm">Two hours ago</p>
         </div>
         <div>
