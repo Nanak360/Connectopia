@@ -1,6 +1,6 @@
 const appPages = {
   HOME: "/",
-  FRIENDS: "/friends",
+  FRIENDS: "/profile/friends",
   SAVED_POSTS: "/saved",
   NOTIFICATIONS: "/notifications",
   LOGOUT: "/logout",
