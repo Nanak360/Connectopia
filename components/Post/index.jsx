@@ -1,8 +1,6 @@
 "use client";
 import Avatar from "@components/Avatar";
 import Card from "@components/Card";
-import PostDropdown from "@components/PostDropdown";
-import React, { useState } from "react";
 import {
   Camera,
   Heart,
@@ -10,35 +8,16 @@ import {
   MoreHorizontal,
   Share2,
 } from "react-feather";
-import { postMoreButtonOptions } from "@constants";
-import Link from "next/link";
+import PostHeader from "./PostHeader";
 
 const Post = () => {
-  const [openMore, setOpenMore] = useState(false);
   return (
     <Card>
-      <div className="flex gap-3">
-        <div>
-          <Avatar src="/profile-pic.png" size={36} />
-        </div>
-        <div className="grow">
-          <Link href={"/profile"}>
-            <span className="font-semibold hover:underline cursor-pointer">
-              Nanak Bandyopadhyay
-            </span>
-          </Link>
-          <p className="text-gray-500 text-sm">Two hours ago</p>
-        </div>
-        <div>
-          <button onClick={() => setOpenMore((prev) => !prev)}>
-            <MoreHorizontal />
-          </button>
-          <PostDropdown
-            itemsList={postMoreButtonOptions}
-            openDropdown={openMore}
-          />
-        </div>
-      </div>
+      <PostHeader
+        userName={"Nanak Bandyopadhyay"}
+        userImage={"/profile-pic.png"}
+        relativePostTime={"Two hours ago"}
+      />
       <div>
         <p className="my-3 text-sm">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt aut
