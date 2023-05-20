@@ -1,5 +1,8 @@
+"use client";
 import Link from "next/link";
 import { FileText, Image, Info, Map, Smile, User, Users } from "react-feather";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const icons = {
   People: <User key={0} />,
@@ -17,6 +20,13 @@ const HorizontalIconsPanel = ({
   showIcon = true,
   fullWidth = false,
 }) => {
+  const pathname = usePathname();
+  const [activeSection, setActiveSection] = useState(pathname);
+  useEffect(() => {
+    if (pathname === "/profile" || pathname.includes("posts")) {
+      setActiveSection("/posts");
+    } else setActiveSection(pathname);
+  }, [pathname]);
   let activeLinkClass = fullWidth
     ? "flex items-center gap-1 text-socialBlue100 bg-tertiary500 rounded-md px-2 py-2 text-sm justify-center shadow-md font-bold"
     : "text-socialBlue100 bg-tertiary300 flex items-center gap-1 rounded-3xl px-2 py-1 text-sm";
@@ -37,7 +47,10 @@ const HorizontalIconsPanel = ({
             {isButton ? (
               <button
                 className={
-                  option.id == 0 ? activeLinkClass : nonActiveLinkClass
+                  // activeSection.includes(option.link)
+                  //   ? activeLinkClass
+                  // :
+                  nonActiveLinkClass
                 }
               >
                 {icons[option.value]}
@@ -47,7 +60,9 @@ const HorizontalIconsPanel = ({
               <Link
                 href={option.link}
                 className={
-                  option.id == 0 ? activeLinkClass : nonActiveLinkClass
+                  activeSection.includes(option.link)
+                    ? activeLinkClass
+                    : nonActiveLinkClass
                 }
               >
                 {icons[option.value]}

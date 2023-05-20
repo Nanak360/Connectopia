@@ -16,12 +16,10 @@ const navIcons = [
 
 const Navigation = () => {
   const pathname = usePathname();
-  console.log("pathname = ", pathname);
   const [activePage, setActivePage] = useState(pathname);
   useEffect(() => {
     setActivePage(pathname);
   }, [pathname]);
-  console.log("activePage = ", activePage);
   const hoverClassNames =
     "hover:bg-socialBlue200 hover:bg-opacity-20 hover:-mx-6 px-4 hover:shadow-md transition-all scale-110";
   const activeClassNames =
