@@ -4,6 +4,15 @@ import Card from "../Card";
 import { navList } from "@constants";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { Bell, Home, LogOut, Save, Users } from "react-feather";
+
+const navIcons = [
+  <Home key={0} />,
+  <Users key={1} />,
+  <Save key={2} />,
+  <Bell key={3} />,
+  <LogOut key={4} />,
+];
 
 const Navigation = () => {
   const pathname = usePathname();
@@ -32,7 +41,7 @@ const Navigation = () => {
             }`}
             href={navLink.link}
           >
-            {<navLink.icon />} {navLink.displayName}
+            {navIcons[navLink.id]} {navLink.displayName}
           </Link>
         ))}
       </div>

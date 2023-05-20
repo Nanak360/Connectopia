@@ -1,18 +1,3 @@
-import {
-  AlertTriangle,
-  Bell,
-  Bookmark,
-  Delete,
-  EyeOff,
-  Home,
-  LogOut,
-  Map,
-  Save,
-  Smile,
-  User,
-  Users,
-} from "react-feather";
-
 const appPages = {
   HOME: "/",
   FRIENDS: "/friends",
@@ -22,30 +7,36 @@ const appPages = {
 };
 
 const navList = [
-  { displayName: "Home", link: appPages.HOME, icon: Home, id: 0 },
-  { displayName: "Friends", link: appPages.FRIENDS, icon: Users, id: 1 },
-  { displayName: "Saved posts", link: appPages.SAVED_POSTS, icon: Save, id: 2 },
+  { displayName: "Home", link: appPages.HOME, id: 0 },
+  { displayName: "Friends", link: appPages.FRIENDS, id: 1 },
+  { displayName: "Saved posts", link: appPages.SAVED_POSTS, id: 2 },
   {
     displayName: "Notifications",
     link: appPages.NOTIFICATIONS,
-    icon: Bell,
     id: 3,
   },
-  { displayName: "Logout", link: appPages.LOGOUT, icon: LogOut, id: 4 },
+  { displayName: "Logout", link: appPages.LOGOUT, id: 4 },
 ];
 
 const postMoreButtonOptions = [
-  { id: 0, link: "", value: "Save", icon: Bookmark },
-  { id: 1, link: "", value: "Notifications", icon: Bell },
-  { id: 2, link: "", value: "Hide Post from Timeline", icon: EyeOff },
-  { id: 3, link: "", value: "Delete", icon: Delete },
-  { id: 4, link: "", value: "Report", icon: AlertTriangle },
+  { id: 0, link: "", value: "Save" },
+  { id: 1, link: "", value: "Notifications" },
+  { id: 2, link: "", value: "Hide Post from Timeline" },
+  { id: 3, link: "", value: "Delete" },
+  { id: 4, link: "", value: "Report" },
 ];
 
 const createPostOptions = [
-  { id: 0, link: "", value: "People", icon: User, iconSize: 16 },
-  { id: 1, link: "", value: "Check in", icon: Map, iconSize: 16 },
-  { id: 2, link: "", value: "Mood", icon: Smile, iconSize: 16 },
+  { id: 0, link: "/", value: "People" },
+  { id: 1, link: "/", value: "Check in" },
+  { id: 2, link: "/", value: "Mood" },
+];
+
+const profileViewOptions = [
+  { id: 0, link: "/", value: "Posts" },
+  { id: 1, link: "/", value: "About" },
+  { id: 2, link: "/", value: "Friends" },
+  { id: 3, link: "/", value: "Photos" },
 ];
 
 module.exports = {
@@ -53,4 +44,5 @@ module.exports = {
   postMoreButtonOptions,
   appPages,
   createPostOptions,
+  profileViewOptions,
 };
