@@ -10,6 +10,7 @@ import {
 } from "react-feather";
 import PostHeader from "./PostHeader";
 import PostContent from "./PostContent";
+import PostReaction from "./PostReaction";
 
 const Post = () => {
   return (
@@ -24,17 +25,7 @@ const Post = () => {
           "https://images.unsplash.com/photo-1521080755838-d2311117f767?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1262&q=80"
         }
       />
-      <div className="mt-5 flex gap-6 items-center">
-        <button className="flex gap-1 items-center">
-          <Heart /> 1.2k
-        </button>
-        <button className="flex gap-1 items-center">
-          <MessageCircle /> 221
-        </button>
-        <button className="flex gap-1 items-center">
-          <Share2 /> 91
-        </button>
-      </div>
+      <PostReaction likes={"12k"} comments={3212} shares={432} />
       <div className="flex mt-4 gap-2 items-center">
         <Avatar src="/profile-pic.png" size={32} />
         <div className="relative border rounded-full grow">
