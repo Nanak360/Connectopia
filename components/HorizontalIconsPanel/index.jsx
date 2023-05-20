@@ -18,7 +18,7 @@ const HorizontalIconsPanel = ({
   fullWidth = false,
 }) => {
   let activeLinkClass = fullWidth
-    ? "flex items-center gap-1 text-socialBlue100 bg-tertiary500 rounded-md px-2 py-2 text-sm justify-center"
+    ? "flex items-center gap-1 text-socialBlue100 bg-tertiary500 rounded-md px-2 py-2 text-sm justify-center shadow-md font-bold"
     : "text-socialBlue100 bg-tertiary300 flex items-center gap-1 rounded-3xl px-2 py-1 text-sm";
 
   let nonActiveLinkClass = fullWidth
@@ -33,7 +33,7 @@ const HorizontalIconsPanel = ({
     >
       {options.map((option) => {
         return (
-          <div className={fullWidth && "w-full"} key={option.id}>
+          <div className={fullWidth ? "w-full" : undefined} key={option.id}>
             {isButton ? (
               <button
                 className={

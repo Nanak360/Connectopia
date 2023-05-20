@@ -23,9 +23,9 @@ const Navigation = () => {
   }, [pathname]);
   console.log("activePage = ", activePage);
   const hoverClassNames =
-    "hover:bg-socialBlue200 hover:bg-opacity-20 hover:-mx-6 px-4 hover:shadow-sm transition-all scale-110";
+    "hover:bg-socialBlue200 hover:bg-opacity-20 hover:-mx-6 px-4 hover:shadow-md transition-all scale-110";
   const activeClassNames =
-    "text-tertiary500 bg-socialBlue bg-opacity-80 px-4 -mx-10 shadow-sm";
+    "text-tertiary500 bg-socialBlue bg-opacity-80 px-4 -mx-10 shadow-md";
   return (
     <Card>
       <div className="p-2">

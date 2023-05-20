@@ -19,7 +19,7 @@ const Post = () => {
     <Card>
       <div className="flex gap-3">
         <div>
-          <Avatar size={36} />
+          <Avatar src="/profile-pic.png" size={36} />
         </div>
         <div className="grow">
           <Link href={"/profile"}>
@@ -61,7 +61,7 @@ const Post = () => {
         </button>
       </div>
       <div className="flex mt-4 gap-2 items-center">
-        <Avatar size={32} />
+        <Avatar src="/profile-pic.png" size={32} />
         <div className="relative border rounded-full grow">
           <textarea
             className="bg-transparent rounded-full h-10 p-2 px-4 block w-full"
