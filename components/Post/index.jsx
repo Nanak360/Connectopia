@@ -9,6 +9,7 @@ import {
   Share2,
 } from "react-feather";
 import PostHeader from "./PostHeader";
+import PostContent from "./PostContent";
 
 const Post = () => {
   return (
@@ -18,16 +19,11 @@ const Post = () => {
         userImage={"/profile-pic.png"}
         relativePostTime={"Two hours ago"}
       />
-      <div>
-        <p className="my-3 text-sm">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt aut
-          quia earum, libero aperiam a maiores! Sapiente officia minus facere
-          atque, modi earum quas pariatur error illum beatae sit magnam!
-        </p>
-        <div className="rounded-md overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1521080755838-d2311117f767?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1262&q=80"></img>
-        </div>
-      </div>
+      <PostContent
+        imgLink={
+          "https://images.unsplash.com/photo-1521080755838-d2311117f767?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1262&q=80"
+        }
+      />
       <div className="mt-5 flex gap-6 items-center">
         <button className="flex gap-1 items-center">
           <Heart /> 1.2k
