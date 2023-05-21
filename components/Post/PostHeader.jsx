@@ -14,7 +14,7 @@ const PostHeader = ({ userName, userImage, relativePostTime }) => {
         <Avatar src={userImage} size={36} />
       </div>
       <div className="grow">
-        <Link href={"/profile"}>
+        <Link href={"/profile/"}>
           <span className="font-semibold hover:underline cursor-pointer">
             {userName}
           </span>
