@@ -1,5 +1,5 @@
 import Navigation from "@components/Navigation";
-import "./global.css";
+import "../global.css";
 
 import { Ubuntu } from "next/font/google";
 
