@@ -10,5 +10,5 @@ export const metadata = {
 };
 
 export default function AutoLayout({ children }) {
-  return <div className="mt-4 max-w-6xl mx-auto">HI</div>;
+  return <div className="mt-4 max-w-6xl mx-auto">{children}</div>;
 }
