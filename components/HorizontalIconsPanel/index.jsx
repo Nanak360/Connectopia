@@ -54,16 +54,16 @@ const HorizontalIconsPanel = ({
                 }
               >
                 {icons[option.value]}
-                {option.value}
+                <span className="md:block hidden">{option.value}</span>
               </button>
             ) : (
               <Link
                 href={option.link}
-                className={
+                className={`${
                   activeSection.includes(option.link)
                     ? activeLinkClass
                     : nonActiveLinkClass
-                }
+                } md:text-sm text-xs`}
               >
                 {icons[option.value]}
                 {option.value}
