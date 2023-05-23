@@ -6,6 +6,10 @@ export default function Index({ params }) {
     <div>
       <PostFormCard />
       <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
     </div>
   );
 }

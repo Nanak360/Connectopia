@@ -36,7 +36,7 @@ const profile = ({ params }) => {
       {isFriends && (
         <Card>
           <h2 className="text-2xl mb-2 font-bold">Friends</h2>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-2">
             <FriendInfo />
             <FriendInfo />
             <FriendInfo />
@@ -52,7 +52,7 @@ const profile = ({ params }) => {
 
       {isPhotos && (
         <Card>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid md:grid-cols-2 gap-3">
             <div className="h-48 shadow-md rounded-md overflow-hidden flex items-center">
               <img src="https://images.unsplash.com/photo-1459664018906-085c36f472af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />
             </div>

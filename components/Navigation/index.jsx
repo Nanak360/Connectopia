@@ -21,25 +21,26 @@ const Navigation = () => {
     setActivePage(pathname);
   }, [pathname]);
   const hoverClassNames =
-    "hover:bg-socialBlue200 hover:bg-opacity-20 hover:-mx-6 px-4 hover:shadow-md transition-all scale-110";
+    "hover:bg-socialBlue200 hover:bg-opacity-20 hover:-mx-1 hover:shadow-md transition-all scale-110";
   const activeClassNames =
-    "text-tertiary500 bg-socialBlue bg-opacity-80 px-4 -mx-10 shadow-md";
+    "text-tertiary500 bg-socialBlue bg-opacity-80 md:-mx-4 shadow-md";
   return (
-    <Card>
-      <div className="p-2">
-        <h2 className="text-2xl block text-socialBlue font-bold mb-4">
+    <Card noPadding={true} >
+      <div className="md:p-2 flex md:block justify-around md:justify-normal shadow-2xl md:shadow-none">
+        <h2 className="px-4 pt-2 text-2xl text-socialBlue font-bold mb-4 hidden md:block">
           Navigation
         </h2>
         {navList.map((navLink) => (
           <Link
             onClick={() => setActivePage(navLink.id)}
             key={navLink.id}
-            className={`flex items-center gap-3 px-6 py-3 my-2 rounded-md ${
+            className={`text-xs md:text-sm flex items-center gap-1 md:gap-3 px-4 py-4 md:py-3 md:px-8 my-2 rounded-full md:rounded-md ${
               activePage == navLink.link ? activeClassNames : hoverClassNames
             }`}
             href={navLink.link}
           >
-            {navIcons[navLink.id]} {navLink.displayName}
+            {navIcons[navLink.id]}
+            <span className="md:block hidden">{navLink.displayName}</span>
           </Link>
         ))}
       </div>
