@@ -3,7 +3,7 @@ const appPages = {
   FRIENDS: "/profile/friends",
   SAVED_POSTS: "/saved",
   NOTIFICATIONS: "/notifications",
-  LOGOUT: "/logout",
+  LOGOUT: "/login",
 };
 
 const navList = [

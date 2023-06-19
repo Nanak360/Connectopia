@@ -9,9 +9,9 @@ const LoginPage = () => {
   const router = useRouter();
   const supabase = createClientComponentClient();
 
-  const handleSignUp = async () => {
+  const handleSignUp = async (provider) => {
     const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
+      provider,
     });
     console.log(data);
     if (error) console.error("error => ", error);
@@ -25,11 +25,6 @@ const LoginPage = () => {
     router.refresh();
   };
 
-  const handleSignOut = async () => {
-    await supabase.auth.signOut();
-    router.refresh();
-  };
-
   return (
     <div className="h-screen flex items-center">
       <div className="max-w-xs mx-auto grow -mt-24">
@@ -37,7 +32,7 @@ const LoginPage = () => {
         <Card noPadding={true}>
           <div className="rounded-md">
             <button
-              onClick={handleSignUp}
+              onClick={async () => await handleSignUp("google")}
               className="flex w-full gap-4 items-center justify-center p-4 border-b border-b-tertiary500 hover:bg-socialBlue hover:text-white hover:border-b-socialBlue hover:rounded-md hover:shadow-md transition-all hover:scale-110"
             >
               <svg
