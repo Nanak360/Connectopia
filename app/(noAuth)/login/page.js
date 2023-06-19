@@ -1,15 +1,45 @@
+"use client";
 import Card from "@components/Card";
 import Link from "next/link";
 import React from "react";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
+  const router = useRouter();
+  const supabase = createClientComponentClient();
+
+  const handleSignUp = async () => {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+    });
+    console.log(data);
+    if (error) console.error("error => ", error);
+  };
+
+  const handleSignIn = async () => {
+    await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+    router.refresh();
+  };
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    router.refresh();
+  };
+
   return (
     <div className="h-screen flex items-center">
       <div className="max-w-xs mx-auto grow -mt-24">
         <h1 className="text-6xl mb-4 text-gray-300 text-center">Login</h1>
         <Card noPadding={true}>
           <div className="rounded-md">
-            <button className="flex w-full gap-4 items-center justify-center p-4 border-b border-b-tertiary500 hover:bg-socialBlue hover:text-white hover:border-b-socialBlue hover:rounded-md hover:shadow-md transition-all hover:scale-110">
+            <button
+              onClick={handleSignUp}
+              className="flex w-full gap-4 items-center justify-center p-4 border-b border-b-tertiary500 hover:bg-socialBlue hover:text-white hover:border-b-socialBlue hover:rounded-md hover:shadow-md transition-all hover:scale-110"
+            >
               <svg
                 className="h-8 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
