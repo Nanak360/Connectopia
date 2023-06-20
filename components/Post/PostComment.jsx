@@ -5,7 +5,7 @@ import { Camera } from "react-feather";
 const PostComment = () => {
   return (
     <div className="flex mt-4 gap-2 items-center">
-      <Avatar src="/profile-pic.png" size={32} />
+      <Avatar src="" size={32} />
       <div className="relative border rounded-full grow">
         <textarea
           className="bg-transparent rounded-full h-10 p-2 px-4 block w-full"
