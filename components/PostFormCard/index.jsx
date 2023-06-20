@@ -10,10 +10,10 @@ const PostFormCard = () => {
   return (
     <Card>
       <div className="flex gap-4">
-        <Avatar src="/profile-pic.png"></Avatar>
+        <Avatar></Avatar>
         <textarea
           className="grow mt-1 bg-transparent"
-          placeholder={"What's on your mind Nanak?"}
+          placeholder={`What's on your mind?`}
         />
       </div>
       <div className="flex items-center justify-between mt-2">
