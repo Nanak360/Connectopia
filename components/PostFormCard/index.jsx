@@ -7,16 +7,15 @@ import { Send } from "react-feather";
 import { createPostOptions } from "@constants";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
-const PostFormCard = () => {
+const PostFormCard = ({ userId }) => {
   const supabase = createClientComponentClient();
   const [content, setContent] = useState("");
   const createPost = async () => {
-    const { data: sessionData } = await supabase.auth.getSession();
-    if (sessionData)
+    if (userId)
       await supabase
         .from("posts")
         .insert({
-          author: sessionData.session.user.id,
+          author: userId,
           content,
         })
         .then(({ data, error }) => {
