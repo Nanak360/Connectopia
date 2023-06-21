@@ -24,10 +24,10 @@ const Avatar = ({ src, size = 48 }) => {
 
   return (
     <Link href={"/profile"} className="cursor-pointer">
-      {userAvatar ? (
+      {src || userAvatar ? (
         <Image
           className="rounded-full overflow-hidden"
-          src={userAvatar}
+          src={src || userAvatar}
           width={size}
           height={size}
           alt="profile-pic"
