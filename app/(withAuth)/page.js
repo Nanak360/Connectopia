@@ -1,6 +1,6 @@
 "use client";
-import Post from "@components/Post";
 import PostFormCard from "@components/PostFormCard";
+import PostsList from "@components/PostsList";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -27,11 +27,7 @@ export default function Index({ params }) {
   ) : (
     <div>
       <PostFormCard />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      <PostsList />
     </div>
   );
 }
