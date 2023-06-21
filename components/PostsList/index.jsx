@@ -9,8 +9,10 @@ const PostsList = ({}) => {
   const getPosts = async () => {
     supabase
       .from("posts")
-      .select()
+      .select("id, content, created_at, profiles(id, avatar, name)")
+      .order("created_at", { ascending: false })
       .then(({ data, error }) => {
+        console.log("posts => ", data);
         if (!error) setPosts(data);
       });
   };
@@ -21,7 +23,13 @@ const PostsList = ({}) => {
   return (
     <>
       {posts.map((post) => (
-        <Post userId={post.author} postText={post.content} key={post.id} />
+        <Post
+          userName={post.profiles.name}
+          userAvatar={post.profiles.avatar}
+          userId={post.author}
+          postText={post.content}
+          key={post.id}
+        />
       ))}
     </>
   );
