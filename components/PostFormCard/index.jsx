@@ -2,25 +2,29 @@
 import Avatar from "@components/Avatar";
 import Card from "@components/Card";
 import HorizontalIconsPanel from "@components/HorizontalIconsPanel";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Send } from "react-feather";
 import { createPostOptions } from "@constants";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { UserContext } from "@contexts/UserContext";
 
-const PostFormCard = ({ userId }) => {
+const PostFormCard = ({ userId, setPostsSinceLogin }) => {
   const supabase = createClientComponentClient();
   const [content, setContent] = useState("");
+  const { user } = useContext(UserContext);
   const createPost = async () => {
-    if (userId)
+    if (user.id)
       await supabase
         .from("posts")
         .insert({
-          author: userId,
+          author: user.id,
           content,
         })
         .then(({ data, error }) => {
-          if (!error) setContent("");
-          alert("Post created");
+          if (!error) {
+            setContent("");
+            setPostsSinceLogin((pre) => pre + 1);
+          }
         });
   };
   return (

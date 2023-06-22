@@ -2,11 +2,12 @@
 import Avatar from "@components/Avatar";
 import PostDropdown from "@components/PostDropdown";
 import { postMoreButtonOptions } from "@constants";
+import moment from "moment";
 import Link from "next/link";
 import React, { useState } from "react";
 import { MoreHorizontal } from "react-feather";
 
-const PostHeader = ({ userName, userImage, relativePostTime }) => {
+const PostHeader = ({ userName, userImage, postCreationTime }) => {
   const [openMore, setOpenMore] = useState(false);
   return (
     <div className="flex gap-3">
@@ -19,7 +20,9 @@ const PostHeader = ({ userName, userImage, relativePostTime }) => {
             {userName}
           </span>
         </Link>
-        <p className="text-gray-500 text-sm">{relativePostTime}</p>
+        <p className="text-gray-500 text-sm">
+          {moment(postCreationTime).fromNow()}
+        </p>
       </div>
       <div>
         <button onClick={() => setOpenMore((prev) => !prev)}>
