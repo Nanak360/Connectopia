@@ -5,13 +5,13 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const icons = {
-  People: <User key={0} />,
-  "Check in": <Map key={1} />,
-  Mood: <Smile key={2} />,
-  Posts: <FileText key={3} />,
-  About: <Info key={4} />,
-  Friends: <Users key={5} />,
-  Photos: <Image key={6} />,
+  People: <User size={20} key={0} />,
+  "Check in": <Map size={20} key={1} />,
+  Mood: <Smile size={20} key={2} />,
+  Posts: <FileText size={20} key={3} />,
+  About: <Info size={20} key={4} />,
+  Friends: <Users size={20} key={5} />,
+  Photos: <Image size={20} key={6} />,
 };
 
 const HorizontalIconsPanel = ({
@@ -45,14 +45,7 @@ const HorizontalIconsPanel = ({
         return (
           <div className={fullWidth ? "w-full" : undefined} key={option.id}>
             {isButton ? (
-              <button
-                className={
-                  // activeSection.includes(option.link)
-                  //   ? activeLinkClass
-                  // :
-                  nonActiveLinkClass
-                }
-              >
+              <button className={nonActiveLinkClass + " text-xs"}>
                 {icons[option.value]}
                 <span className="md:block hidden">{option.value}</span>
               </button>

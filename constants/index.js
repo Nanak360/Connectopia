@@ -27,9 +27,10 @@ const postMoreButtonOptions = [
 ];
 
 const createPostOptions = [
-  { id: 0, link: "/", value: "People" },
-  { id: 1, link: "/", value: "Check in" },
-  { id: 2, link: "/", value: "Mood" },
+  { id: 0, link: "/", value: "Photos" },
+  { id: 1, link: "/", value: "People" },
+  { id: 2, link: "/", value: "Check in" },
+  { id: 3, link: "/", value: "Mood" },
 ];
 
 const profileViewOptions = [
