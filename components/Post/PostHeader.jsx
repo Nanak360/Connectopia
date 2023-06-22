@@ -2,10 +2,10 @@
 import Avatar from "@components/Avatar";
 import PostDropdown from "@components/PostDropdown";
 import { postMoreButtonOptions } from "@constants";
+import moment from "moment";
 import Link from "next/link";
 import React, { useState } from "react";
 import { MoreHorizontal } from "react-feather";
-import ReactTimeAgo from "react-time-ago";
 
 const PostHeader = ({ userName, userImage, postCreationTime }) => {
   const [openMore, setOpenMore] = useState(false);
@@ -21,7 +21,7 @@ const PostHeader = ({ userName, userImage, postCreationTime }) => {
           </span>
         </Link>
         <p className="text-gray-500 text-sm">
-          <ReactTimeAgo date={postCreationTime} />
+          {moment(postCreationTime).fromNow()}
         </p>
       </div>
       <div>

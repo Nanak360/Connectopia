@@ -1,14 +1,10 @@
 "use client";
-import TimeAgo from "javascript-time-ago";
-import en from "javascript-time-ago/locale/en.json";
 import PostFormCard from "@components/PostFormCard";
 import PostsList from "@components/PostsList";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { UserContext } from "@contexts/UserContext";
-
-TimeAgo.addDefaultLocale(en);
 
 export default function Index({ params }) {
   const router = useRouter();
