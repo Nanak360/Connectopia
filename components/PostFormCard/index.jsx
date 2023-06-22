@@ -7,7 +7,7 @@ import { Send } from "react-feather";
 import { createPostOptions } from "@constants";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
-const PostFormCard = ({ userId }) => {
+const PostFormCard = ({ userId, setPostsSinceLogin }) => {
   const supabase = createClientComponentClient();
   const [content, setContent] = useState("");
   const createPost = async () => {
@@ -19,8 +19,10 @@ const PostFormCard = ({ userId }) => {
           content,
         })
         .then(({ data, error }) => {
-          if (!error) setContent("");
-          alert("Post created");
+          if (!error) {
+            setContent("");
+            setPostsSinceLogin((pre) => pre + 1);
+          }
         });
   };
   return (

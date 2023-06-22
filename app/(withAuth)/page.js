@@ -9,6 +9,7 @@ export default function Index({ params }) {
   const router = useRouter();
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [userId, setUserId] = useState("");
+  const [postsSinceLogin, setPostsSinceLogin] = useState(0);
   const supabase = createClientComponentClient();
   async function fetchSession(params) {
     const { data, error } = await supabase.auth.getSession();
@@ -28,8 +29,8 @@ export default function Index({ params }) {
     <></>
   ) : (
     <div>
-      <PostFormCard userId={userId} />
-      <PostsList userId={userId} />
+      <PostFormCard setPostsSinceLogin={setPostsSinceLogin} userId={userId} />
+      <PostsList postCount={postsSinceLogin} userId={userId} />
     </div>
   );
 }

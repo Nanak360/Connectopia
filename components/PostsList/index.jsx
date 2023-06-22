@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Post from "@components/Post";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
-const PostsList = ({}) => {
+const PostsList = ({ postCount }) => {
   const [posts, setPosts] = useState([]);
   const supabase = createClientComponentClient();
   const getPosts = async () => {
@@ -18,7 +18,7 @@ const PostsList = ({}) => {
   };
   useEffect(() => {
     getPosts();
-  }, []);
+  }, [postCount]);
 
   return (
     <>
