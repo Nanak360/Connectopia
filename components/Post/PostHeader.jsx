@@ -5,8 +5,9 @@ import { postMoreButtonOptions } from "@constants";
 import Link from "next/link";
 import React, { useState } from "react";
 import { MoreHorizontal } from "react-feather";
+import ReactTimeAgo from "react-time-ago";
 
-const PostHeader = ({ userName, userImage, relativePostTime }) => {
+const PostHeader = ({ userName, userImage, postCreationTime }) => {
   const [openMore, setOpenMore] = useState(false);
   return (
     <div className="flex gap-3">
@@ -19,7 +20,9 @@ const PostHeader = ({ userName, userImage, relativePostTime }) => {
             {userName}
           </span>
         </Link>
-        <p className="text-gray-500 text-sm">{relativePostTime}</p>
+        <p className="text-gray-500 text-sm">
+          <ReactTimeAgo date={postCreationTime} />
+        </p>
       </div>
       <div>
         <button onClick={() => setOpenMore((prev) => !prev)}>

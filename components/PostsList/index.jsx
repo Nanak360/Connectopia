@@ -29,6 +29,7 @@ const PostsList = ({ postCount }) => {
           userId={post.author}
           postText={post.content}
           key={post.id}
+          postCreationTime={post.created_at}
         />
       ))}
     </>
