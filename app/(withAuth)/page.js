@@ -6,6 +6,7 @@ import PostsList from "@components/PostsList";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { UserContext } from "@contexts/UserContext";
 
 TimeAgo.addDefaultLocale(en);
 
@@ -13,6 +14,7 @@ export default function Index({ params }) {
   const router = useRouter();
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [userId, setUserId] = useState("");
+  const [user, setUser] = useState({});
   const [postsSinceLogin, setPostsSinceLogin] = useState(0);
   const supabase = createClientComponentClient();
   async function fetchSession(params) {
@@ -21,6 +23,15 @@ export default function Index({ params }) {
     if (data?.session) {
       setUserLoggedIn(true);
       setUserId(data.session.user.id);
+      supabase
+        .from("profiles")
+        .select()
+        .eq("id", data.session.user.id)
+        .then((res) => {
+          if (res.data.length) {
+            setUser(res.data[0]);
+          }
+        });
     } else {
       router.push("/login");
     }
@@ -33,8 +44,10 @@ export default function Index({ params }) {
     <></>
   ) : (
     <div>
-      <PostFormCard setPostsSinceLogin={setPostsSinceLogin} userId={userId} />
-      <PostsList postCount={postsSinceLogin} userId={userId} />
+      <UserContext.Provider value={{ user }}>
+        <PostFormCard setPostsSinceLogin={setPostsSinceLogin} />
+        <PostsList postCount={postsSinceLogin} />
+      </UserContext.Provider>
     </div>
   );
 }
