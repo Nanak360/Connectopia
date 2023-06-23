@@ -13,7 +13,6 @@ const PostComment = () => {
           style={{
             resize: "none",
           }}
-          resize={false}
         ></textarea>
         <button className="absolute top-2 right-4 text-tertiary100">
           <Camera size={16} />
