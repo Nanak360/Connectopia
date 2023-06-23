@@ -1,24 +1,21 @@
 "use client";
+import { useEffect, useState } from "react";
 import PostFormCard from "@components/PostFormCard";
 import PostsList from "@components/PostsList";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 import { UserContext } from "@contexts/UserContext";
 
 export default function Index({ params }) {
   const router = useRouter();
   const [userLoggedIn, setUserLoggedIn] = useState(false);
-  const [userId, setUserId] = useState("");
   const [user, setUser] = useState({});
   const [postsSinceLogin, setPostsSinceLogin] = useState(0);
   const supabase = createClientComponentClient();
   async function fetchSession(params) {
     const { data, error } = await supabase.auth.getSession();
-    console.log(data);
     if (data?.session) {
       setUserLoggedIn(true);
-      setUserId(data.session.user.id);
       supabase
         .from("profiles")
         .select()
