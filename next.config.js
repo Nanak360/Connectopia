@@ -8,8 +8,15 @@ const nextConfig = {
         port: "",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "nmxhwicnpvlkkojttkwo.supabase.co",
+        port: "",
+        pathname: "/storage/v1/object/public/photos/**",
+      },
     ],
   },
 };
 
 module.exports = nextConfig;
+// https://nmxhwicnpvlkkojttkwo.supabase.co/storage/v1/object/public/photos/1687447747696Nanak360-linkedin-cover.png
