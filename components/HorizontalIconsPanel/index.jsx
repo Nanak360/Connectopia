@@ -17,6 +17,7 @@ const icons = {
 const HorizontalIconsPanel = ({
   options,
   isButton,
+  uploadPhotos,
   showIcon = true,
   fullWidth = false,
 }) => {
@@ -45,10 +46,25 @@ const HorizontalIconsPanel = ({
         return (
           <div className={fullWidth ? "w-full" : undefined} key={option.id}>
             {isButton ? (
-              <button className={nonActiveLinkClass + " text-xs"}>
-                {icons[option.value]}
-                <span className="md:block hidden">{option.value}</span>
-              </button>
+              option.value !== "Photos" ? (
+                <button className={nonActiveLinkClass + " text-xs"}>
+                  {icons[option.value]}
+                  <span className="md:block hidden">{option.value}</span>
+                </button>
+              ) : (
+                <label
+                  className={nonActiveLinkClass + " text-xs cursor-pointer"}
+                >
+                  <input
+                    type="file"
+                    multiple
+                    className="hidden"
+                    onChange={uploadPhotos}
+                  ></input>
+                  {icons[option.value]}
+                  <span className="md:block hidden">{option.value}</span>
+                </label>
+              )
             ) : (
               <Link
                 href={option.link}
