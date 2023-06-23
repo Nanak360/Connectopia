@@ -11,7 +11,7 @@ const PostsList = ({ postCount }) => {
   const getPosts = async () => {
     supabase
       .from("posts")
-      .select("id, content, created_at, profiles(id, avatar, name)")
+      .select("id, content, created_at, photos, profiles(id, avatar, name)")
       .order("created_at", { ascending: false })
       .then(({ data, error }) => {
         if (!error) setPosts(data);
@@ -31,6 +31,7 @@ const PostsList = ({ postCount }) => {
           postText={post.content}
           key={post.id}
           postCreationTime={post.created_at}
+          photos={post.photos || []}
         />
       ))}
     </>

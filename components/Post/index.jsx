@@ -12,6 +12,7 @@ const Post = ({
   imgLink,
   postText,
   postCreationTime,
+  photos,
 }) => {
   return (
     <Card>
@@ -20,7 +21,7 @@ const Post = ({
         userImage={userAvatar}
         postCreationTime={postCreationTime}
       />
-      <PostContent imgLink={imgLink} content={postText} />
+      <PostContent photos={photos} content={postText} />
       <PostReaction likes={"12k"} comments={3212} shares={432} />
       <PostComment />
     </Card>

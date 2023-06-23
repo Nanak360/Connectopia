@@ -5,14 +5,18 @@ import { Camera } from "react-feather";
 const PostComment = () => {
   return (
     <div className="flex mt-4 gap-2 items-center">
-      <Avatar src="" size={32} />
-      <div className="relative border rounded-full grow">
+      <Avatar src="" size={26} />
+      <div className="relative border rounded-xl grow border-gray-500">
         <textarea
-          className="bg-transparent rounded-full h-10 p-2 px-4 block w-full"
+          className="bg-transparent rounded-xl text-sm h-8 px-4 py-1 block w-full"
           placeholder="Leave a comment"
+          style={{
+            resize: "none",
+          }}
+          resize={false}
         ></textarea>
         <button className="absolute top-2 right-4 text-tertiary100">
-          <Camera />
+          <Camera size={16} />
         </button>
       </div>
     </div>
